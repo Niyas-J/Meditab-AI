@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Contact Us</title>
-    <link rel="icon" href="{{ url_for('static', filename='images/team-logo.jpg') }}" type="image/jpg">
+    <link rel="icon" href="{{ url_for('static', filename='images/hackthon-logo.png') }}" type="image/png">
 
 </head>
 
@@ -15,7 +15,7 @@
     <header class="p-4 dark:bg-gray-100 dark:text-gray-800">
         <div class="container flex justify-between h-16 mx-auto">
             <a href="/" aria-label="Back to homepage" class="flex items-center p-2">
-                <img src="https://i.ibb.co/F8c6pYJ/team-logo.jpg" alt="team-logo" class="w-[80px] h-25 rounded-full mt-6" />
+                <img src="{{ url_for('static', filename='images/hackthon-logo.png') }}" alt="hackthon-logo" class="w-[80px] h-25 rounded-full mt-6" />
             </a>
             <ul class="hidden space-x-3 md:flex">
                 <li><a href="why-us" class="flex items-center px-4">Why Us</a></li>

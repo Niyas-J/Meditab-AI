@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
     <link href="./output.css" rel="stylesheet">
-    <link rel="icon" href="{{ url_for('static', filename='images/team-logo.jpg') }}" type="image/jpg">
+    <link rel="icon" href="{{ url_for('static', filename='images/hackthon-logo.png') }}" type="image/png">
 
 </head>
 
@@ -20,7 +20,7 @@
     <header class="p-4 dark:bg-gray-100 dark:text-gray-800">
         <div class="container flex justify-between h-16 mx-auto">
             <a rel="noopener noreferrer" href="/" aria-label="Back to homepage" class="flex items-center p-2">
-                <img src="https://i.ibb.co/F8c6pYJ/team-logo.jpg" alt="team-logo"
+                <img src="{{ url_for('static', filename='images/hackthon-logo.png') }}" alt="hackthon-logo"
                     class="w-[80px] h-25 rounded-full mt-6" />
             </a>
             <ul class="hidden space-x-3 md:flex">
