@@ -1,91 +1,127 @@
-# wrap-ansi [![Build Status](https://travis-ci.com/chalk/wrap-ansi.svg?branch=master)](https://travis-ci.com/chalk/wrap-ansi) [![Coverage Status](https://coveralls.io/repos/github/chalk/wrap-ansi/badge.svg?branch=master)](https://coveralls.io/github/chalk/wrap-ansi?branch=master)
+# 💊 Meditab-AI - Medicine Analysis System
 
-> Wordwrap a string with [ANSI escape codes](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors_and_Styles)
+A Flask-based web application for analyzing medicine information through image uploads or text input.
 
-## Install
+🔗 **Live Demo**: [medilens-vision-guide.vercel.app](https://medilens-vision-guide.vercel.app/)
+
+## ✨ Features
+
+- 📸 Upload medicine images or enter medicine names
+- 🔍 Get detailed medicine information
+- 🎤 Text-to-speech for analysis results
+- 📱 Responsive design with Tailwind CSS
+- 🚀 Deployed on Vercel
+
+## 🛠️ Tech Stack
+
+- **Backend**: Flask (Python)
+- **Frontend**: HTML, Tailwind CSS, JavaScript
+- **Deployment**: Vercel (Serverless)
+
+## 🚀 Quick Start
+
+### Local Development
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Niyas-J/Meditab-AI.git
+cd Meditab-AI
+```
+
+2. Create a virtual environment and install dependencies:
+```bash
+python -m venv venv
+venv\Scripts\activate  # On Windows
+# or
+source venv/bin/activate  # On Mac/Linux
+
+pip install -r requirements.txt
+```
+
+3. Run the Flask app:
+```bash
+python app.py
+```
+
+4. Open your browser and navigate to:
+```
+http://127.0.0.1:5000
+```
+
+## 🌐 Deploy to Vercel
+
+### Option 1: Vercel Dashboard (Recommended)
+
+1. Go to [vercel.com](https://vercel.com) and sign in
+2. Click **"Add New Project"**
+3. Import the repository: `Niyas-J/Meditab-AI`
+4. Vercel will auto-detect the configuration
+5. Click **"Deploy"**
+
+### Option 2: Vercel CLI
+
+```bash
+npm install -g vercel
+vercel login
+vercel --prod
+```
+
+## 📁 Project Structure
 
 ```
-$ npm install wrap-ansi
+Meditab-AI/
+├── api/
+│   └── index.py          # Vercel serverless entry point
+├── templates/
+│   ├── index.html        # Main page
+│   ├── about.html        # About page
+│   ├── contact.html      # Contact page
+│   └── output.css        # Tailwind CSS
+├── static/
+│   └── images/          # Static images
+├── app.py               # Flask app (for local development)
+├── vercel.json          # Vercel configuration
+├── requirements.txt     # Python dependencies
+└── README.md           # This file
 ```
 
-## Usage
+## 🔧 Configuration
 
-```js
-const chalk = require('chalk');
-const wrapAnsi = require('wrap-ansi');
+The app uses Flask with the following configuration:
 
-const input = 'The quick brown ' + chalk.red('fox jumped over ') +
-	'the lazy ' + chalk.green('dog and then ran away with the unicorn.');
+- **Template folder**: `templates/`
+- **Static folder**: `static/`
+- **Max upload size**: 16MB
+- **Host**: `0.0.0.0` (for Vercel compatibility)
 
-console.log(wrapAnsi(input, 20));
-```
+## 📝 API Endpoints
 
-<img width="331" src="screenshot.png">
+- `GET /` - Main page
+- `GET /why-us` - About page
+- `GET /contact` - Contact page
+- `POST /analyze` - Analyze medicine (accepts image upload or medicine name)
 
-## API
+## 🤝 Contributing
 
-### wrapAnsi(string, columns, options?)
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-Wrap words to the specified column width.
+## 📄 License
 
-#### string
+This project is open source and available under the MIT License.
 
-Type: `string`
+## 👨‍💻 Author
 
-String with ANSI escape codes. Like one styled by [`chalk`](https://github.com/chalk/chalk). Newline characters will be normalized to `\n`.
+**Niyas-J**
 
-#### columns
+- GitHub: [@Niyas-J](https://github.com/Niyas-J)
+- Repository: [Meditab-AI](https://github.com/Niyas-J/Meditab-AI)
 
-Type: `number`
+## 🙏 Acknowledgments
 
-Number of columns to wrap the text to.
-
-#### options
-
-Type: `object`
-
-##### hard
-
-Type: `boolean`\
-Default: `false`
-
-By default the wrap is soft, meaning long words may extend past the column width. Setting this to `true` will make it hard wrap at the column width.
-
-##### wordWrap
-
-Type: `boolean`\
-Default: `true`
-
-By default, an attempt is made to split words at spaces, ensuring that they don't extend past the configured columns. If wordWrap is `false`, each column will instead be completely filled splitting words as necessary.
-
-##### trim
-
-Type: `boolean`\
-Default: `true`
-
-Whitespace on all lines is removed by default. Set this option to `false` if you don't want to trim.
-
-## Related
-
-- [slice-ansi](https://github.com/chalk/slice-ansi) - Slice a string with ANSI escape codes
-- [cli-truncate](https://github.com/sindresorhus/cli-truncate) - Truncate a string to a specific width in the terminal
-- [chalk](https://github.com/chalk/chalk) - Terminal string styling done right
-- [jsesc](https://github.com/mathiasbynens/jsesc) - Generate ASCII-only output from Unicode strings. Useful for creating test fixtures.
-
-## Maintainers
-
-- [Sindre Sorhus](https://github.com/sindresorhus)
-- [Josh Junon](https://github.com/qix-)
-- [Benjamin Coe](https://github.com/bcoe)
+- Built with Flask
+- Styled with Tailwind CSS
+- Deployed on Vercel
 
 ---
 
-<div align="center">
-	<b>
-		<a href="https://tidelift.com/subscription/pkg/npm-wrap_ansi?utm_source=npm-wrap-ansi&utm_medium=referral&utm_campaign=readme">Get professional support for this package with a Tidelift subscription</a>
-	</b>
-	<br>
-	<sub>
-		Tidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.
-	</sub>
-</div>
+Made with ❤️ by Niyas-J
