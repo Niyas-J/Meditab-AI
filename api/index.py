@@ -1,9 +1,13 @@
 from flask import Flask, render_template, request, jsonify, send_from_directory
 import os
+from pathlib import Path
+
+# Get the absolute path to the project root
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 app = Flask(__name__, 
-            template_folder="../templates", 
-            static_folder="../static")
+            template_folder=str(BASE_DIR / "templates"), 
+            static_folder=str(BASE_DIR / "static"))
 
 # Disable instance path for Vercel serverless
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max upload
@@ -26,7 +30,7 @@ def contact():
 
 @app.route("/output.css")
 def output_css():
-    return send_from_directory("../templates", "output.css", mimetype="text/css")
+    return send_from_directory(str(BASE_DIR / "templates"), "output.css", mimetype="text/css")
 
 
 @app.route("/analyze", methods=["POST"])
